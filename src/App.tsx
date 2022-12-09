@@ -6,9 +6,9 @@ import Message from './pages/Message'
 import Profile from './pages/Profile'
 
 const router = createBrowserRouter([
-	{ path: '/portfolio', element: <Dashboard /> },
-	{ path: '/portfolio/profile', element: <Profile /> },
-	{ path: '/portfolio/message', element: <Message /> },
+	{ path: '/', element: <Dashboard /> },
+	{ path: '/profile', element: <Profile /> },
+	{ path: '/message', element: <Message /> },
 	{ path: '*', element: <NotFound />}
 
 ])
