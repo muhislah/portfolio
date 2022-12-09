@@ -1,7 +1,7 @@
 {
+  "homepage": "https://muhislah.github.io/portfolio",
   "name": "react-vite",
   "private": true,
-  "homepage": "/portfolio/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
