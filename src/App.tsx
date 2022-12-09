@@ -13,7 +13,7 @@ const routes = [
 ]
 
 const router = createBrowserRouter(routes, {
-	basename: "/portfolio"
+	basename: "/portfolio/"
 })
 
 const App = () => {
