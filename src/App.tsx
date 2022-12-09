@@ -12,9 +12,7 @@ const routes = [
 	{ path: '*', element: <NotFound />}
 ]
 
-const router = createHashRouter(routes, {
-	basename: "/portfolio/#"
-})
+const router = createHashRouter(routes)
 
 const App = () => {
 	return (
