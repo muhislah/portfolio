@@ -1,5 +1,5 @@
 import React from 'react'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFound from './pages/404'
 import Dashboard from './pages/Dashboard'
 import Message from './pages/Message'
@@ -12,7 +12,9 @@ const routes = [
 	{ path: '*', element: <NotFound />}
 ]
 
-const router = createHashRouter(routes)
+const router = createBrowserRouter(routes, {
+	basename: '/portfolio/'
+})
 
 const App = () => {
 	return (
