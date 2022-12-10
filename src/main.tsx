@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
     <Helmet>
       <meta charSet="utf-8" />
-      <title>This is my Portfolio</title>
+      <title>This is My Portfolio</title>
       <link rel="canonical" href="https://muhislah.netlify.app" />
       <meta name="description" content="This website contain Muhamad Islahuddin Portfolios" />
     </Helmet>
