@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 import './header.css'
 
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const location = useLocation()
+    const [colorScheme, setColorScheme] = useState('light')
 
     const links = [
         { url: '/blog', label: 'Blog' },
@@ -14,6 +16,7 @@ const Header = () => {
         { url: '/message', label: 'Message' },
     ]
 
+
     const handleChangeMenu = () => {
         setOpenMenu(prev => !prev)
     }
@@ -21,9 +24,20 @@ const Header = () => {
     useEffect(() => {
         setOpenMenu(false)
     }, [location.pathname])
-    
+
+    useEffect(() => {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setColorScheme('dark')
+        }else {
+            setColorScheme('light')
+        }
+    },[])
+
     return (
         <>
+            <Helmet>
+                <meta name="color-scheme" content={colorScheme}/>
+            </Helmet>
             <div className='flex px-8 h-[10vh] items-center md:max-w-[1024px] md:mx-auto'>
                 <h1 className={`cursor-pointer font-bold text-[#00cba9] border-[#00cba9] ${location.pathname === "/" ? 'text-[#00cba9] border-b-2 -mb-1' : ''}`}>
                     <Link to="/">Muhamad</Link>
@@ -32,7 +46,7 @@ const Header = () => {
                     {
                         links.map((link) => {
                             return (
-                                <li 
+                                <li
                                     className={`hover:text-[#00cba9] hover:border-b-2 hover:-mb-1 ${location.pathname === link.url ? 'text-[#00cba9] border-b-2 -mb-1' : ''} border-[#00cba9] transition ease-in-out duration-300 cursor-pointer`}
                                     key={link.url}
                                 >
@@ -55,7 +69,7 @@ const Header = () => {
                 </div>
             </div>
             {/* menu items list */}
-            <div id="menulist" className={`md:hidden absolute w-full bottom-0 top-[8vh] bg-gradient-to-t from-[#00cba9] via-white to-white flex opacity-0 justify-end overflow-hidden transition-all ${openMenu ? "open" : 'close'}`}>
+            <div id="menulist" className={`md:hidden absolute w-full bottom-0 top-[8vh] bg-gradient-to-t from-[#00cba9] via-white dark:via-black to-white flex opacity-0 justify-end overflow-hidden transition-all ${openMenu ? "open" : 'close'}`}>
                 <ul className='flex flex-col flex-shrink-0 w-1/3 mr-8 gap-1 h-initial'>
                     {
                         links.map((link) => (
