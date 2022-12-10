@@ -50,7 +50,7 @@ const Header = () => {
                 </div>
             </div>
             {/* menu items list */}
-            <div id="menulist" className={`md:hidden absolute w-full bottom-0 top-[8vh] bg-gradient-to-t from-[#00cba9] via-transparent to-white flex opacity-0 justify-end overflow-hidden transition-all ${openMenu ? "open" : 'close'}`}>
+            <div id="menulist" className={`md:hidden absolute w-full bottom-0 top-[8vh] bg-gradient-to-t from-[#00cba9] via-white to-white flex opacity-0 justify-end overflow-hidden transition-all ${openMenu ? "open" : 'close'}`}>
                 <ul className='flex flex-col flex-shrink-0 w-1/3 mr-8 gap-1 h-initial'>
                     {
                         links.map((link) => (
