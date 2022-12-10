@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import './header.css'
@@ -17,6 +17,11 @@ const Header = () => {
     const handleChangeMenu = () => {
         setOpenMenu(prev => !prev)
     }
+
+    useEffect(() => {
+        setOpenMenu(false)
+    }, [location.pathname])
+    
     return (
         <>
             <div className='flex px-8 h-[10vh] items-center md:max-w-[1024px] md:mx-auto'>
